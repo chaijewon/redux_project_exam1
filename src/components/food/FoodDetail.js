@@ -19,7 +19,7 @@ function FoodDetail(){
                 <tbody>
                 <tr>
                     <td className={"text-center"} colSpan={"2"}>
-                        <img src={"http://www.menupan.com" + food_detail.poster} style={{"width": "100%"}}/>
+                        <img src={"http://www.menupan.com" + food_detail.poster} style={{"width": "600px","height":"200px"}}/>
                     </td>
                 </tr>
                 <tr>

@@ -2,6 +2,7 @@ import {Fragment,useState,useEffect} from "react";
 import {useSelector,useDispatch} from "react-redux";
 import {fetchFoodList,fetchPage} from "../../actions/foodActions";
 import Pagination from "react-js-pagination";
+import {Link} from "react-router-dom";
 function Home(){
     const [curpage,setCurpage]=useState(1)
     const dispatch=useDispatch()
@@ -20,12 +21,12 @@ function Home(){
     const html=food_list.map((food)=>
         <div className="col-md-4">
             <div className="thumbnail">
-                <a href="#">
+                <Link to={"/food/food_detail/"+food.fno}>
                     <img src={'http://www.menupan.com'+food.poster}  style={{"width":"100%"}}/>
                         <div className="caption">
                             <p>{food.name}</p>
                         </div>
-                </a>
+                </Link>
             </div>
         </div>
     )
