@@ -1,5 +1,6 @@
 import {FETCH_FOOD_LIST,FETCH_FOOD_DETAIL,FETCH_PAGE,FETCH_RECIPE_LIST,
-FETCH_RECIPE_DETAIL,FETCH_RECIPE_COUNT,FETCH_RECIPE_PAGE} from "./types";
+FETCH_RECIPE_DETAIL,FETCH_RECIPE_COUNT,FETCH_RECIPE_PAGE,
+FETCH_RECIPE_POSTERS,FETCH_RECIPE_MAKES,FETCH_FIND_PAGE,FETCH_FIND_LIST} from "./types";
 import axios from "axios";
 
 /*
@@ -106,4 +107,56 @@ export const fetchRecipeDetail=(no)=>dispatch=>{
         type:FETCH_RECIPE_DETAIL,
         payload:response.data
     }))
+}
+
+export const fetchRecipePosters=(no)=>disptch=>{
+    axios.get('http://localhost/recipe/image_react',{
+        params:{
+            no:no
+        }
+    }).then(response=>disptch({
+        type:FETCH_RECIPE_POSTERS,
+        payload:response.data
+    }))
+}
+export const fetchRecipeMakes=(no)=>dispatch=>{
+    axios.get('http://localhost/recipe/make_react',{
+        params:{
+            no:no
+        }
+    }).then(response=>dispatch({
+        type:FETCH_RECIPE_MAKES,
+        payload:response.data
+    }))
+}
+
+export const fetchFindList=(page,fd)=>dispatch=>{
+    axios.get('http://localhost/food/find_react',{
+        params:{
+            page:page,
+            address:fd
+        }
+    }).then(response=>{
+       const action={
+          type:FETCH_FIND_LIST,
+          payload:response.data
+       }
+       dispatch(action)
+    })
+}
+
+export const fetchFindPage=(fd)=>dispatch=>{
+    axios.get('http://localhost/food/find_totalpage_react',{
+           params:{
+               address:fd
+           }
+    }).then(response=>{
+            const action={
+                type: FETCH_FIND_PAGE,
+                payload: response.data
+            }
+            // reducer로 전송
+            dispatch(action)
+
+    })
 }

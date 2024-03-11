@@ -8,7 +8,7 @@ import {Provider} from "react-redux";
 import FoodDetail from "./components/food/FoodDetail";
 import RecipeList from "./components/recipe/RecipeList";
 import RecipeDetail from "./components/recipe/RecipeDetail";
-
+import FoodFind from "./components/food/FoodFind";
 function App() {
   return (
     <Provider store={store}>
@@ -20,6 +20,7 @@ function App() {
             <Route path={"/food/food_detail/:fno"} element={<FoodDetail/>}/>
             <Route path={"/recipe/recipe_list"} element={<RecipeList/>}/>
             <Route path={"/recipe/recipe_detail/:no"} element={<RecipeDetail/>}/>
+            <Route path={"/food/find"} element={<FoodFind/>}/>
           </Routes>
         </div>
       </Router>

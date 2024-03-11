@@ -12,7 +12,7 @@ function Header(){
                     <li className="active"><Link to={"/"}>Home</Link></li>
                     <li><Link to={"/recipe/recipe_list"}>Recipe</Link></li>
                     <li><a href="#">Goods</a></li>
-                    <li><a href="#">FoodFind</a></li>
+                    <li><Link to={"/food/find"}>FoodFind</Link></li>
                 </ul>
             </div>
         </nav>
