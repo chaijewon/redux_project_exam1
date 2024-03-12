@@ -13,6 +13,7 @@ function Header(){
                     <li><Link to={"/recipe/recipe_list"}>Recipe</Link></li>
                     <li><a href="#">Goods</a></li>
                     <li><Link to={"/food/find"}>FoodFind</Link></li>
+                    <li><Link to={"/board/list"}>게시판</Link></li>
                 </ul>
             </div>
         </nav>

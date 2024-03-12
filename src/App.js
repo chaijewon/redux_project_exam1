@@ -9,6 +9,11 @@ import FoodDetail from "./components/food/FoodDetail";
 import RecipeList from "./components/recipe/RecipeList";
 import RecipeDetail from "./components/recipe/RecipeDetail";
 import FoodFind from "./components/food/FoodFind";
+import BoardList from "./components/board/BoardList";
+import BoardDetail from "./components/board/BoardDetail";
+import BoardInsert from "./components/board/BoardInsert";
+import BoardDelete from "./components/board/BoardDelete";
+import BoardUpdate from "./components/board/BoardUpdate";
 function App() {
   return (
     <Provider store={store}>
@@ -21,6 +26,11 @@ function App() {
             <Route path={"/recipe/recipe_list"} element={<RecipeList/>}/>
             <Route path={"/recipe/recipe_detail/:no"} element={<RecipeDetail/>}/>
             <Route path={"/food/find"} element={<FoodFind/>}/>
+            <Route path={"/board/list"} element={<BoardList/>}/>
+            <Route path={"/board/detail/:no"} element={<BoardDetail/>}/>
+            <Route path={"/board/insert"} element={<BoardInsert/>}/>
+            <Route path={"/board/delete/:no"} element={<BoardDelete/>}/>
+            <Route path={"/board/update/:no"} element={<BoardUpdate/>}/>
           </Routes>
         </div>
       </Router>
